@@ -1,0 +1,13 @@
+[Unit]
+Description=LCD_menu_servise
+
+[Service]
+Type=forking
+WorkingDirectory=/home/pi/lcd/sources/
+Environment=RACK_ENV=production
+OOMScoreAdjust=-100
+ExecStart=/home/pi/lcd/sources/menu_lcd1602.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
